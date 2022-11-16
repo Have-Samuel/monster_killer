@@ -34,6 +34,7 @@ function writeToLog(ev, val, monsterHealth, playerHealth) {
     finalMonsterHealth: monsterHealth,
     finalPlayerHealth: playerHealth,
   };
+  // Using Switches
   switch (ev) {
     case LOG_EVENT_PLAYER_ATTACK:
       logEntry.target = 'MONSTER';
@@ -224,6 +225,12 @@ function healPlayerHander() {
 }
 
 function printLogHandler() {
+  for (let i = 0; i < 3; i++) {
+    console.log('-------');
+  }
+  // for (let i = 10; i > 0; i--) {
+  //   console.log(i);
+  // }
   console.log(battleLog);
 }
 
