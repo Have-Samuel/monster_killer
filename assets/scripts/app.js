@@ -227,7 +227,7 @@ function healPlayerHander() {
 // FOR LOOPS
 function printLogHandler() {
   for (let i = 0; i < 3; i++) {
-    console.log('-------');
+    console.log('------');
   }
   // for (let i = 10; i > 0; i--) {
   //   console.log(i);
