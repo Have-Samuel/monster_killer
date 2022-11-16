@@ -229,15 +229,22 @@ function printLogHandler() {
   for (let i = 0; i < 3; i++) {
     console.log('------');
   }
+  let k = 0;
+  outerWhile: do {
+    console.log('Outer', k);
+    innerFor:for (let j = 0; j < 5; j++) {
+      if (j === 3) {
+        console.log('Inner', j);
+      }
+      break innerFor;
+      // continue outerWhile; // Dangerous for infinite Loop
+    }
+    k++;
+  } while (k < 4);
+
   // for (let i = 10; i > 0; i--) {
   //   console.log(i);
   // }
-  let k = 0;
-  while (k < 4) {
-    console.log(k);
-    k++;
-  }
-
   // for (let i = 0; i < battleLog.length; i++) {
   //   console.log(battleLog[i]);
   // }
