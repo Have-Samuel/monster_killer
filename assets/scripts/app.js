@@ -2,6 +2,7 @@ const ATTACK_VALUE = 10;
 const STRONG_ATTACK_VALUE = 17;
 const MONSTER_ATTACK_VALUE = 14;
 const HEAL_VALUE = 20;
+let lastLoggedEntry;
 
 const MODE_ATTACK = 'ATTACK'; // MODE_ATTACK = 0;
 const MODE_STRONG_ATTACK = 'STRONG_ATTACK'; // MODE_STRONG_ATTACK = 1
@@ -225,21 +226,30 @@ function healPlayerHander() {
 }
 // FOR LOOPS
 function printLogHandler() {
-  // for (let i = 0; i < 3; i++) {
-  //   console.log('-------');
-  // }
+  for (let i = 0; i < 3; i++) {
+    console.log('-------');
+  }
   // for (let i = 10; i > 0; i--) {
   //   console.log(i);
   // }
+  let k = 0;
+  while (k < 4) {
+    console.log(k);
+    k++;
+  }
 
   // for (let i = 0; i < battleLog.length; i++) {
   //   console.log(battleLog[i]);
   // }
   let i = 0;
   for (const logEntry of battleLog) {
-    console.log(`#${i}`);
-    for (const key in logEntry) {
-      console.log(`${key} => ${logEntry[key]}`);
+    if (!lastLoggedEntry && lastLoggedEntry !== 0 || lastLoggedEntry < i) {
+      console.log(`#${i}`);
+      for (const key in logEntry) {
+        console.log(`${key} => ${logEntry[key]}`);
+      }
+      lastLoggedEntry = i;
+      break;
     }
     i++;
   }
